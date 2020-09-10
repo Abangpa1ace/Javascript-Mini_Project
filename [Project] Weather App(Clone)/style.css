@@ -15,10 +15,6 @@ body {
   color: #ffffff;
 }
 
-body * {
-  border: 1px solid red;
-}
-
 .location,
 .temperature {
   height: 30vh;
@@ -45,4 +41,8 @@ body * {
 
 .degree-section h2 {
   font-size: 40px;
+}
+
+.temp-description {
+  font-size: 25px;
 }
