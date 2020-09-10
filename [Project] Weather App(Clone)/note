@@ -1,0 +1,25 @@
+[navigator 객체] 
+
+- 브라우저 공급자 및 버전 정보 등을 포함한 브라우저에 대한 다양한 정보를 저장하는 객체
+  * navigator.appName(브라우저명), navigator.platform(운영체제), navigator.geolocation(위치)
+
+
+[fetch 함수]
+
+- 서버의 비동기 요청 API, AJAX(Asynchronous Javascript and XML)의 최신기술
+  * fetch(api)
+     .then((response) => { return response.json(); })
+     .then((data) => { console.log(data); })
+
+  * 초기 XML HTTP Request로 비동기 요청(코드 복잡)
+    ex) var xhr = new XMLHttpRequest();
+        xhr.open('get', '주소');
+
+        xhr.onreadystatechange = function() {
+          if(xhr.readyState !== 4) return;
+          if(xhr.status === 200) {
+            console.log(xhr.responseText);
+          } else {console.log('Error: ' + xhr.status);}
+        }
+
+        xhr.send();
