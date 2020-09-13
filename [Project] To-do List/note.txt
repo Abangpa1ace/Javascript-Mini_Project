@@ -1,0 +1,27 @@
+What I Learned
+
+- event.preventDefault : 이벤트 전파를 방지
+  * event.stopPrepagation : 이벤트 상위요소로 전파를 방지
+
+- document.createElement("div") : 새로운 요소 생성
+  * .querySelector는 기존 요소 선택
+
+- .appendChild(newTodo) : 'newTodo'를 하위태그로 추가
+
+- .classList : 클래스 속성
+  * .add() : 추가
+  * .delete() : 제거
+  * .toggle() : 클래스가 없으면 추가(true), 있으면 제거(false)
+
+- .innerText : 글귀 추가 / .innerHTML = '<i></i>' : tag 추가
+
+- e.target : event 타겟을 알려줌
+    function target(e) {
+        return e.target;
+    }
+     -> .parentElement로 이벤트 타겟의 부모요소를 지움!
+
+- 반응형 remove
+    targetParent.addEventListener('transitionend', function() {
+        targetParent.remove();
+    })
