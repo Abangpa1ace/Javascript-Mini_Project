@@ -1,3 +1,5 @@
+
+
 // Selectors
 const todoInput = document.querySelector('.todo-input');
 const todoBtn = document.querySelector('.todo-btn');
@@ -5,9 +7,10 @@ const todoList = document.querySelector('.todo-list');
 const todoFilter = document.querySelector('.todo-filter');
 
 // Event Listeners
+document.addEventListener('DOMContentLoaded', getTodos);
 todoBtn.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
-todoFilter.addEventListener('click', filterTodo);
+todoFilter.addEventListener('change', filterTodo);
 
 // Functions
 
@@ -23,6 +26,8 @@ function addTodo(event) {
     newTodo.classList.add('todo-item');
     newTodo.innerText = todoInput.value;
     todoDiv.appendChild(newTodo);
+    //Add NewTodo to LocalStorage
+    saveLocalTodos(todoInput.value);
     //Create chkBtn
     const chkBtn = document.createElement('button');
     chkBtn.classList.add('check-btn');
@@ -33,7 +38,6 @@ function addTodo(event) {
     delBtn.classList.add('delete-btn');
     delBtn.innerHTML = '<i class="fas fa-trash"></i>';  
     todoDiv.appendChild(delBtn);
-
     //Append to List
     todoList.appendChild(todoDiv);
     todoInput.value = "";   //초기화
@@ -43,9 +47,9 @@ function addTodo(event) {
 function deleteCheck(e) {
     const target = e.target; 
     const targetParent = target.parentElement;
-    console.log(target);
     if (target.classList[0]==='delete-btn') {   //DELETE
         targetParent.classList.add("fall");
+        removeLocalTodos(targetParent);
         targetParent.addEventListener('transitionend', function() {
             targetParent.remove();
         })
@@ -81,13 +85,63 @@ function filterTodo(e) {
     })
 }
 
-// func : Save!
+// Storage 동작
+// func : Save to LocalStorage
 function saveLocalTodos(todo) {
     //CHECK -- Already Have?
-    let savdeTodos;
+    let savedTodos;
     if(localStorage.getItem('savedTodos') === null) {
-        savdeTodos = [];
+        savedTodos = [];
     } else {
-        savdeTodos = JSON.parse(localStorage.getItem('savedTodos'));
+        savedTodos = JSON.parse(localStorage.getItem('savedTodos'));
     }
+    savedTodos.push(todo);
+    localStorage.setItem('savedTodos', JSON.stringify(savedTodos));
+}
+
+// func : get from LocalStorage
+function getTodos() {
+    let savedTodos;
+    if(localStorage.getItem('savedTodos') === null) {
+        savedTodos = [];
+    } else {
+        savedTodos = JSON.parse(localStorage.getItem('savedTodos'));
+    }
+    savedTodos.forEach((todo) => {
+        //Create todo Div
+        const todoDiv = document.createElement('div');
+        todoDiv.classList.add('todo');
+        //Create li
+        const newTodo = document.createElement('li');
+        newTodo.classList.add('todo-item');
+        newTodo.innerText = todo;
+        todoDiv.appendChild(newTodo);
+        //Add NewTodo to LocalStorage
+        saveLocalTodos(todo);
+        //Create chkBtn
+        const chkBtn = document.createElement('button');
+        chkBtn.classList.add('check-btn');
+        chkBtn.innerHTML = '<i class="fas fa-check"></i>';  
+        todoDiv.appendChild(chkBtn);
+        //Create delBtn
+        const delBtn = document.createElement('button');
+        delBtn.classList.add('delete-btn');
+        delBtn.innerHTML = '<i class="fas fa-trash"></i>';  
+        todoDiv.appendChild(delBtn);
+        //Append to List
+        todoList.appendChild(todoDiv);
+    })
+}
+
+// func : Delete from LocalStorage
+function removeLocalTodos(todo) {
+    let savedTodos;
+    if(localStorage.getItem('savedTodos') === null) {
+        savedTodos = [];
+    } else {
+        savedTodos = JSON.parse(localStorage.getItem('savedTodos'));
+    }
+    removeIndex = todo.children[0].innerText;
+    savedTodos.splice(savedTodos.indexOf(removeIndex), 1);
+    localStorage.setItem('savedTodos', JSON.stringify(savedTodos));
 }
