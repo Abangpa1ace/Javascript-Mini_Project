@@ -1,4 +1,4 @@
-What I Learned
+[Today I Learned]
 
 - event.preventDefault : 이벤트 전파를 방지
   * event.stopPrepagation : 이벤트 상위요소로 전파를 방지
@@ -21,7 +21,30 @@ What I Learned
     }
      -> .parentElement로 이벤트 타겟의 부모요소를 지움!
 
-- 반응형 remove
+- 반응형 remove : 이벤트 리스너 'transitionend'
     targetParent.addEventListener('transitionend', function() {
         targetParent.remove();
     })
+
+- LocalStorage : 개인 호스트에 저장
+  1) 함수선언
+  function saveLocalTodos(todo) {
+  
+  2) 저장데이터가 없으면 배열생성, 있으면 불러오기(JSON.parse)
+    let savedTodos;
+    if(localStorage.getItem('savedTodos') === null) {
+        savedTodos = [];
+    } else {
+        savedTodos = JSON.parse(localStorage.getItem('savedTodos'));
+    }
+  
+  3) 추가된 데이터 배열 push, 서버에 저장(JSON.stringify)
+    savedTodos.push(todo);
+    localStorage.setItem('savedTodos', JSON.stringify(savedTodos));
+
+  4+) 데이터 제거 : savedTodos.splice();
+    removeIndex = todo.children[0].innerText;
+    savedTodos.splice(savedTodos.indexOf(removeIndex), 1);
+      * slice()는 추출, splice()는 제거!
+    localStorage.setItem('savedTodos', JSON.stringify(savedTodos));
+}
