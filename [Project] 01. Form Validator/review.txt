@@ -1,0 +1,41 @@
+[HTML]
+
+1. <div> 대신 <form> 사용
+  - 내용을 웹서버로 보내는데 용이
+  - <h3> 대신 <label for = ''> 제목 
+
+2. <small> 에러 메세지란 생성, JS로 내용 제어
+
+
+[CSS]
+
+1. :root 가상 클래스에 success, error 색깔변수 지정
+  :root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  }
+
+2. box-shadow 제어참고 {X방향, Y방향, blur(흐릿한 정도), spread(그림자 확장정도), color}
+  .mail { box-shadow: 0 2px 10px 0 rgba(0,0,0,0.3) };
+
+3. 에러 메세지를 display 대신 visibility 제어
+  - visibility: hidden <-> visible;
+
+
+[Javascript] * answer.js 참고
+1. 판정을 showError(input, msg), showSuccess(input) 2가지 함수로 확인했다.
+   나는 각각의 boolean을 통해 .right/.wrong 클래스를 붙였지만, 정답은 에러 메세지 표현 등을 위해 함수를 별도로 만들었다.
+   checkLength(), checkEmail(), checkPasswordMatch() 각각의 boolean에서 공통된 함수제어가 가능해서 깔끔한 것 같다.
+
+2. checkLength(input, min, max) 함수로, username과 password 길이체크를 한번에 구현했다.
+   min, max값을 JS에서만 변경하면 기준과 에러메세지가 일괄 수정되므로 유지보수에 매우 유리할 것 같다.
+
+3. getFieldName(input) 함수로, 에러메세지가 input.id에 인터렉티브 동작. 유지보수에 유리.
+
+4. 최종엔, checkRequired([inputName, inputMail, inputPwd, inputPwd2]) 함수로 유효성 체크.
+   공백을 trim()한 후, 각 input이 공백이면 `${getFieldName(input)} is required` 에러 메세지 발생
+   이후, 각각의 check 함수를 가동함.
+
+<총평>
+form 태그, box-shadow 효과 등에 대해 새롭게 배웠다.
+1차원적 코드임을 느꼈고, 에러 메세지 등을 역동적으로 제어하는 JS 코딩을 리뷰를 통해 배웠다. 
