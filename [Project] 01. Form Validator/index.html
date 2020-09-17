@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>UserList</title>
+    <title>01. Form Validator</title>
 </head>
 <body>
     <div id ="container">
@@ -12,23 +12,23 @@
             <h1>Register with Tangle</h1>
             <div class="input">
                 <h3>Username</h3>
-                <input type="text" class="input-name" placeholder="Enter username">
-                <h4>Username must be at least 3 characters</h4>
+                <input type="text" name = "username" autocomplete="on" class = "input-name" placeholder="Enter username">
+                <h4 class="input-name-msg">Username must be at least 3 characters</h4>
             </div>
             <div class="input">
                 <h3>Email</h3>
-                <input type="text" class="input-mail" placeholder="Enter email">
+                <input type="text" name = "email" autocomplete="on" class = "input-mail" placeholder="Enter email">
                 <h4>Email is not valid</h4>
             </div>
             <div class="input">
                 <h3>Password</h3>
-                <input type="text" class="input-pwd" placeholder="Enter password">
+                <input type="password" name = "new-password" class = "input-pwd" placeholder="Enter password">
                 <h4>Password must be at least 6 characters</h4>
             </div>
             <div class="input">
                 <h3>Password2</h3>
-                <input type="text" class="input-pwd2" placeholder="Enter password again">
-                <h4>Password2 is required</h4>
+                <input type="password" class = "input-pwd2" placeholder="Enter password again">
+                <h4>Passwords do not match</h4>
             </div>
             <div class="submit-btn">Submit</div>
         </section>
