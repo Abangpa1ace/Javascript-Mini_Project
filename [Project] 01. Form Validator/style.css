@@ -7,12 +7,15 @@
 #container {
     width: 100vw;
     height: 100vh;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #adf8f8, #c07ce7);
 }
 
 .main {
+    background: #ffffff;
     position: relative;
     width: 400px;
     height: 600px;
@@ -23,7 +26,7 @@
 
 .main h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 10px 0 20px;
 }
 
 .input {
@@ -37,12 +40,33 @@
     height: 35%;
     margin: 5px 0 3px;
     padding: 10px;
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
 }
 
-.input h4 {
+.input input:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.input.wrong input {
+    border-color: red;
+}
+
+.input.wrong h4 {
+    display: block;
+}
+
+.input.right input {
+    border-color: #06da18;
+}
+
+h4 {
     color: #cc1f1f;
     font-size: 14px;
     font-weight: 400;
+    cursor: text;
+    display: none;
 }
 
 .submit-btn {
@@ -57,4 +81,5 @@
     border-radius: 5px;
     text-align: center;
     line-height: 50px;
+    cursor: pointer;
 }
