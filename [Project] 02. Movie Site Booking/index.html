@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>02. Movie Site Booking</title>
+</head>
+<body>
+    <div id ="container">
+        <div class="movie">
+            <div class="movie-choice">
+                <span>Pick a moive:</span>
+                <select name="filter" class="movie-filter">
+                    <option value="10">Avengers ($10)</option>
+                    <option value="12">Joker ($12)</option>
+                    <option value="11">TENET ($11)</option>
+                    <option value="9">X-men ($9)</option>
+                </select>
+            </div>
+            <ul class="seat-list">
+                <li class = "none-seat"><div class="seat na"></div>N/A</li>
+                <li class = "selected-seat"><div class="seat sl"></div>Selected</li>
+                <li class = "occupied-seat"><div class="seat oc"></div>Occupied</li>
+            </ul>
+            <div class="movie-screen"></div>
+            <div class="movie-seat"></div>
+            <p class="movie-check">You have selected 0 seats for a price of $0</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
