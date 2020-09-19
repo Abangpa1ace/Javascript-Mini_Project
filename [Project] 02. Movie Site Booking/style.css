@@ -57,10 +57,7 @@ ul.seat-list {
     width: 12px;
     height: 12px;
     border-radius: 5px 5px 0 0;
-}
-
-.seat.na {
-    background: #ffffff;
+    background: #eeeeee;
 }
 
 .seat.sl {
@@ -91,9 +88,18 @@ ul.seat-list {
 
 .movie-seat {
     width: 240px;
-    height: 160px;
-    border: 2px solid yellowgreen;
-    margin-bottom: 30px;
+    height: 170px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.movie-seat h6 {
+    display: none;
+}
+
+.movie-seat .seat {
+    margin: 2px;
+    cursor: pointer;
 }
 
 .movie-check {
