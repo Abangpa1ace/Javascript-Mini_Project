@@ -66,6 +66,7 @@ ul.seat-list {
 
 .seat.oc {
     background: #ff3567;
+    cursor: default;
 }
 
 .seat-list li .seat {
@@ -104,6 +105,10 @@ ul.seat-list {
 
 .movie-check {
     font-size: 16px;
+}
+
+.movie-check span {
+    color: #0dd196;
 }
 
 
