@@ -60,7 +60,7 @@ function selectedSeat() {
     cntPrice.innerText = `$${seats * movieFilter.value}`;
 }
 
-//Save 동작
+//Save 동작 - 못했다ㅠㅠ
 function saveMovieInfo(value, seats) {
     let savedInfo;
     if (localStorage.getItem('savedInfo') === null) {
