@@ -5,13 +5,15 @@ const movieFilter = document.querySelector('.movie-filter');
 const movieSeat = document.querySelector('.movie-seat');
 const occupiedSeatArray = [[2,3], [3,5], [4,8], [4,9]];
 const movieCheck = document.querySelector('.movie-check');
+let seats = 0;
 
 //Event Listener
 seatMaker(6,9,2,7);
 occupiedSeat(occupiedSeatArray);
 movieSeat.addEventListener('click', (e) => {e.target.classList.toggle('sl')})
-window.addEventListener('load', checkPrice);
-movieFilter.addEventListener('change', checkPrice);
+movieSeat.addEventListener('click', selectedSeat);
+window.addEventListener('load', selectedSeat);
+movieFilter.addEventListener('change', selectedSeat);
 
 //Function
 
@@ -43,11 +45,27 @@ function occupiedSeat(array) {
     }
 };
 
-
-function checkPrice() {
+//예약신청 토글 + 가격 계산
+function selectedSeat() {
+    const movieSeats = movieSeat.querySelectorAll('.seat');
+    let seats = 0;
+    for (let i=0 ; i<movieSeats.length ; i++) {
+        if (movieSeats[i].classList.contains('sl')) {
+            seats++;
+        }
+    }
     const cnt = document.querySelector('.cnt');
-    const cntPrice = document.querySelector('.cnt-price');
-    let seats = 1;
     cnt.innerText = seats;
+    const cntPrice = document.querySelector('.cnt-price');
     cntPrice.innerText = `$${seats * movieFilter.value}`;
+}
+
+//Save 동작
+function saveMovieInfo(value, seats) {
+    let savedInfo;
+    if (localStorage.getItem('savedInfo') === null) {
+        savedInfo = [];
+    } else {
+        savedInfo = JSON.parse(localStorage.getItem('savedInfo'));
+    }
 }
