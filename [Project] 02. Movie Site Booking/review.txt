@@ -1,7 +1,51 @@
 [HTML]
 
+1) HTML을 완벽하게 맞췄다! 뿌듯하다!!
+  오히려 정답은 좌석들을 단순히 div들로 나타냈지만 나는 좌석세팅, Occupied 지정 등을 JS함수로 만들었다.
+
+
 [CSS]
+
+1) select { appearance: none; } : 필터형식(화살표)을 없앰
+  * -webkit(구글, 사파리), -moz(파이어폭스) / -ms(익스플로러), -o(오페라) -> 크로싱 브라우저
+
+2) .seat:nth-of-type(2) : nth-child의 속성을 바로 부여
+
+3) .seat:not(.oc):hover {    : 특정 클래스를 제외하는 방법(not)
+    transform: scale(1.2);  : transform scale(확대)
+  }
+
+4) transform 사다리꼴 만들기 : 정답은 전체 .container에 perspective(1000px) 부여, rotateX는 동일.
+
 
 [JS]
 
+1) 새로 알게된 tool들
+- const selectedSeats = document.querySelectorAll('.seat:not(.oc)') : 모든 요소들을 가져옴
+- const seatIndex = [...selectedSeats].map(seat => [...seats].indexOf(seat)); : 인덱스 함수로 재지정
+  * 배열.map((요소,인덱스,배열) => { return 요소 })
+- let ticketPrice = +movieSelect.value; : 초기화
+- .movieSeat.addEventListener('click', e => { e.target.style.color = "#fff" }) : 요소 내부에서 이벤트 대상에 대해 실행(이외 요소가 없어야 유리할듯)
+- select.selectedIndex : 인덱스 콜업 / select.value : value 콜업
+
+2) localStorage 저장/불러오기
+- setMovieData(movieIndex, moviePrice) {} 라는, 저장함수를 신규생성
+- setItem(아이템명, 자료)
+  * 값 : localStorage.setItem('selectedMovieIndex', movieIndex);
+  * 배열 : localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
+- getItem(아이템명)
+  * 값 : selectedMovieIndex = localStorage.getItem('selectedMovieIndex');
+  * 배열 : selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'))
+- populateUI() 시, 아이템 불러온 후 null or 0이 아닌지 먼저 if문 확인!
+
+3) 느낀점
+- 우선, 적절한 상위요소에서 e.target으로 이벤트 리스너를 최소화 할 수 있음을 알았다. (대신 불필요 요소가 없어야 할듯)
+  또, localStorage 저장을 위한 getItem/setItem과 JSON(배열)의 기본적인 사용법을 알게되었다.
+
+
 [총평]
+
+2번 과제부터 localStorage 개념을 접목하면서, 이전 클론코딩에서 모호하게 이해한 사용법을 어느정도 알게 되었다. (값은 바로 아이템에, 배열을 JSON 처리)
+JS 코딩에 정보저장이 추가되면서, localStorage 저장할 아이템과, 어느 함수/이벤트 리스너 에서 최신화해야 할 지 고민해야겠다. 또한, UI생성 및 변경시 자료가 null or 0 이 아닌지 if문을 넣는 습관도 중요한 것 같다.
+
+마크업(HTML, CSS)은 거의 유사하게 구현하여, 자신감이 매우 생긴 상태이다.
