@@ -73,15 +73,30 @@ h1 {
 }
 
 .timebar {
+    position: relative;
     width: 33.5rem;
     height: 0.7rem;
     background: #2c09f0;
     border: 2px solid #fff;
-    margin-right: 0.5rem;
+    margin-left: 0.3rem;
+    margin-right: 0.4rem;
+}
+
+.timebar-tracker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-10%, -40%);
+    width: 1.2rem;
+    height: 2rem;
+    background: rgb(75, 255, 255);
+    border: 2px solid #000000;
+    cursor: pointer;
 }
 
 .time {
     font-size: 1.1rem;
     font-weight: bold;
+    padding: 0 0.3rem;
 }
 
