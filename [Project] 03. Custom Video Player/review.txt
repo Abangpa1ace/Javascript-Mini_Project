@@ -1,0 +1,25 @@
+[HTML]
+- progess bar를 div 대신 input:range로 제작
+
+
+[CSS]
+
+[Javascript]
+
+1) playPause() 함수에서, class 대신 innerHTML = '<i>'로 버튼 표현
+
+2) progess 계산을 단순화 -> progess.value = (video.currentTime / video.duration) * 100;
+
+3) progress bar에서 이벤트 리스너 제작방법
+
+- function setVideoProgress() {
+     video.currentTime = (+progress.value * video.duratio) / 100
+  }
+  progress.addEventListener('change', setVideoProgress)
+
+
+[총평]
+
+- video 태그문법, Javascript 제어방법 등을 새롭게 배웠다. (볼륨, 전체화면 등 추가기능도 있었다!)
+- progess bar를 div의 translateX보다, input:range의 value값으로 위치를 제어
+- video 제어는 정형화된 방법이 있어 클론형태로 진행했고, 사실 controls="controls"하면 마음은 편하다.!
