@@ -5,7 +5,7 @@ const video = document.querySelector('.video');
 const btnPlay = document.querySelector('.play');
 const btnStop = document.querySelector('.stop');
 const timeBar = document.querySelector('.timebar')
-const timeTracker = document.querySelector('timebar-tracker')
+const timeTracker = document.querySelector('.timebar-tracker')
 const currentTime = document.querySelector('.current')
 const totalTime = document.querySelector('.total')
 
@@ -18,8 +18,10 @@ video.addEventListener('click', () => {
 btnPlay.addEventListener('click', playPause)
 btnStop.addEventListener('click', videoStop)
 
+
 //Function
 playTime();
+timeBarSetter();
 
 //재생/일시정지
 function playPause() {
@@ -76,3 +78,12 @@ function playTime() {
 }
 
 //프로그레스바
+function timeBarSetter() {
+    video.addEventListener('timeupdate', () => {
+        const max = Math.floor(video.duration);
+        let current = Math.floor(video.currentTime);
+        const timeBarWidth = timeBar.offsetWidth;
+        let ratio = timeBarWidth * (current / max);
+        timeTracker.style.transform = `translateX(${ratio}px)`;
+    });
+}
