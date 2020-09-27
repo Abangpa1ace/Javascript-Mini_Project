@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
     <title>04. Exchange Rate Calculator</title>
 </head>
 <body>
@@ -16,7 +17,15 @@
         <div class="calculator">
             <div class="before">
                 <select name="" class="before-select select"></select>
-                <input type="text" class="before-input input" dir="rtl">
+                <input type="text" class="before-input input" dir="rtl" value="1">
+                <div class="input-icon">
+                    <div class="up-down up">
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                    </div>
+                    <div class="up-down down">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </div>
             </div>
             <div class="rate">
                 <input type="button" class="swap-btn" value="Swap">
@@ -24,11 +33,10 @@
             </div>
             <div class="after">
                 <select name="" class="after-select select"></select>
-                <input type="text" class="after-input input" dir="rtl">
+                <input type="text" class="after-input input" dir="rtl" value="">
             </div>
         </div>
     </section>
     <script src="app.js"></script>
 </body>
-</html>
 </html>
