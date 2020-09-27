@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -13,25 +14,88 @@ body {
 #container {
     margin: 0 auto;
     max-width: 1400px;
-    padding: 0 80px;
+    padding: 0 60px;
 }
 
 h1 {
-    padding: 10px;
+    padding: 25px;
+    font-size: 36px;
     text-align: center;
+    font-weight: bold;
 }
 
-.buttons li {
-    line-height: 60px;
+.main {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.buttons {
+    width: 240px;
+    padding: 10px;
+}
+
+.btn {
+    line-height: 50px;
     display: block;
     width: 200px;
     height: 50px;
     text-align: center;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #777777;
     border-radius: 5px;
     background: #ffffff;
     margin: 10px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bolder;
 }
 
+section.contents {
+    width: 1160px;
+    padding: 10px;
+    padding-left: 20px;
+    min-height: 330px;
+    border-left: 1px solid #000;
+}
+
+.index {
+    border-bottom: 1px solid #000;
+    display: flex;
+    padding: 0 5px 5px 5px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.index h2 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.index h3 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.lists {
+    height: 100%;
+    margin-top: 10px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    margin: 15px 0;
+}
+
+.list span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.list small {
+    font-size: 20px;
+    font-weight: normal;
+}
 
