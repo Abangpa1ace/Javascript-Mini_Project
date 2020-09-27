@@ -26,34 +26,77 @@ body {
 .title h1 {
     font-size: 30px;
     color: #10c790;
+    margin-bottom: 10px;
+}
+
+.title small {
+    font-size: 16px;
 }
 
 .calculator {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .select {
-    width: 60px;
+    width: 70px;
     height: 35px;
     background: transparent;
     border-color: #cccccc;
     border-radius: 1px;
     font-size: 16px;
     padding: 3px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .input {
     width: 260px;
     height: 35px;
     background: transparent;
-    border: none;
-    font-size: 16px;
+    border: 1px solid #cccccc;
+    font-size: 18px;
     padding: 5px;
+    outline: 0;
+}
+
+.before {
+    position: relative;
+}
+
+.up-down {
+    position: absolute;
+    right: -20px;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    opacity: 0;
+    text-align: center;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.up {
+    top: 1px;
+} 
+.down {
+    bottom: 1px;
+}
+
+.input-icon:hover > .up-down {
+    opacity: 1;
+}
+
+.up-down:hover {
+    background: #bbbbbb;
 }
 
 .rate {
     margin: 30px 0;
+    width: 82%;
+
 }
 
 .swap-btn {
@@ -72,8 +115,8 @@ body {
 }
 
 .calculate-rate {
-    float: right;
     line-height: 30px;
     color: #10c790;
-    font-weight: bold;
+    font-weight: 550;
+    float: right;
 }
