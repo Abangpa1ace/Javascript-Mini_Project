@@ -1,10 +1,11 @@
-[HTML]
+[HTML] : 정답과 매우 유사! select list를 JS로 만들어봤다.(정답은 value를 나라명으로 받아 환율 호출하는 듯)
 
-
-[CSS]
-
+[CSS] : 정답과 매우 유사! select background-image를 svg image 활용해서 화살표 모양바꿈
 
 [JS]
 
-[총평]
+1) fetch를 calculate() 함수 내에 사용 -> 계산이 필요한 순간마다 fetch
+2) swap 할 때, before과 after 모두 변수저장 필요 없음!
+   -> before값 = temp -> before = after, after= temp
 
+[총평] : 다음엔 fetch 필요한 순간에 함수내 투입하는걸 시도해봐야겠다!
