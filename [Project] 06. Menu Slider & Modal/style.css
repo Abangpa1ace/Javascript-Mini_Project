@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    outline: 0;
+}
+
+body {
+    position: relative;
+    background: #f4f4f4;
+    min-height: 100vh;
+}
+
+.filter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0,0,0,0.5);
+    z-index: 10;
+}
+
+button {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header {
+    position: relative;
+    height: 270px;
+    background: #2e276e;
+    padding: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 44px;
+}
+
+header p {
+    font-size: 20px;
+    margin: 25px 0;
+}
+
+.btn-modal {
+    width: 150px;
+    height: 50px;
+    background: #b61ebb;
+    font-size: 22px;
+}
+
+.btn-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    background: #1c1844;
+    font-size: 24px;
+}
+
+#main {
+    padding: 40px 60px;
+}
+
+.contents {
+    margin-bottom: 30px;
+}
+
+.contents h2 {
+    color: #050546;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.contents p {
+    line-height: 1.4em;
+}
+
+#login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    width: 400px;
+    height: 490px;
+    background: #ffffff;
+    border: 3px solid red;
+    border-radius: 5px;
+    /* opacity: 0;
+    z-index: 20;
+    transition: all 0.8s ease; */
+}
+
+#login h3 {
+    color: #ffffff;
+    padding: 10px 20px;
+    background: #2e276e;
+}
+
+.login-main {
+    padding: 30px 20px;
+    font-weight: 600;
+}
+
+.login-contents {
+    margin: 20px 0;
+}
+
+.login-main > .login-contents:nth-child(5) {
+    margin-bottom: 40px;
+}
+
+.login-contents p {
+    margin-bottom: 3px;
+}
+
+.login-contents input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+
+.submit-btn {
+    width: 65px;
+    height: 25px;
+    background: #b61ebb;
+    font-size: 14px;
+    font-weight: normal;
+}
