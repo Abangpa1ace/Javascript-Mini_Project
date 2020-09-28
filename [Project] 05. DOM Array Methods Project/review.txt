@@ -1,7 +1,48 @@
 [HTML] 
+1) index에 Person만 <strong>으로 분리 -> 멍청하게 flex 한번 더 씀
 
 [CSS] 
+1) aside width를 설정하고, 반대편 section은 {flex:1} 하면 자동 resize
 
 [JS]
+1) async-await으로 유저정보 받아오기
+  * async function getRandomUser() {
+      const res = await fetch('https://randomuser.me/api');
+      const data = await res.json();
+      const user = data.results[0];
+      const newUser = {     //object로 만들어서 직시적
+          name: `${user.name.first} ${user.name.last}`,
+          money: Math.floor(Math.random() * 1000000)
+      };
+      addData(newUser)      //data Array에 정보추가
+  }
+
+2) map 사용법
+  * function doubleMoney() {
+      data = data.map(user => {
+          return {...user, money: user.money * 2};
+      })
+  }
+  * sort, filter 등의 방법도 answer.js 참고
+
+3) btn 함수들 마지막에 updateDOM() 함수로 최신화!
+  * function updateDOM(providedData = data) {       //첫 줄에 바로 data를 값으로 삽입
+      main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>'
+
+      providedData.forEach(item => {
+          const element = document.createElement('div');
+          element.classList.add('person');
+          element.innerHTML = `<strong>${item.name}</strong> ${formatMoney(item.money)}`
+          main.appendChild(element);
+      })
+  }
+
+4) data.money를 돈 형태로 만드는 formatMoney() 함수(정규식 활용)
+  * function formatMoney(num) {
+      return '$' + num.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  }
 
 [총평] 
+Array(배열) 제어는 대부분 가능했지만, 기본적으로 fetch 후 배열에 추가하는 async function - await를 공부해야겠다.
+또한, 여러가지 요소들을 createElement 반복해서 만든데 반해, 정답에서 보여준 innerHTML를 적극적으로 사용해보겠다.
+마지막으로, updateDOM() 함수에서 (providedData = data) 값 다이렉트 연결 방법도 추후 응용해봐야겠다.
