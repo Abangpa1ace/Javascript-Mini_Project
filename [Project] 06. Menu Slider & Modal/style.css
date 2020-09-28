@@ -66,6 +66,10 @@ header p {
     font-size: 24px;
 }
 
+#slider {
+    background: #c71b1b;
+}
+
 #main {
     padding: 40px 60px;
 }
@@ -92,11 +96,10 @@ header p {
     width: 400px;
     height: 490px;
     background: #ffffff;
-    border: 3px solid red;
     border-radius: 5px;
-    /* opacity: 0;
+    opacity: 0;
     z-index: 20;
-    transition: all 0.8s ease; */
+    transition: all 0.8s ease;
 }
 
 #login h3 {
@@ -111,11 +114,8 @@ header p {
 }
 
 .login-contents {
+    position: relative;
     margin: 20px 0;
-}
-
-.login-main > .login-contents:nth-child(5) {
-    margin-bottom: 40px;
 }
 
 .login-contents p {
@@ -129,10 +129,10 @@ header p {
     font-size: 14px;
 }
 
-
 .submit-btn {
     width: 65px;
     height: 25px;
+    margin-top: 20px;
     background: #b61ebb;
     font-size: 14px;
     font-weight: normal;
