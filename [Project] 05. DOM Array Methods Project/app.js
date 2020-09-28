@@ -51,10 +51,10 @@ function doubleMoney() {
 }
 
 function getMils() {
-    users = users.filter(list => list[1] > 1000000);
+    let usersM = users.filter(list => list[1] > 1000000);
     let j=0;
     for (let i=0 ; i<list.length ; i++) {
-        if(list[i].querySelector('span').innerText !== users[j][0]) {
+        if(list[i].querySelector('span').innerText !== usersM[j][0]) {
             list[i].style.display = 'none';
         } else {
             j++;
@@ -63,15 +63,29 @@ function getMils() {
 }
 
 function descendList() {
-    users = users.sort((a,b) => {
+    let usersD = users.sort((a,b) => {
         return b[1]-a[1]
     })
     for (let i=0 ; i<list.length ; i++) {
-        list[i].querySelector('span').innerText = users[i][0];
-        list[i].querySelector('small').innerText = `$${users[i][1].toLocaleString('en')}`;
+        list[i].querySelector('span').innerText = usersD[i][0];
+        list[i].querySelector('small').innerText = `$${usersD[i][1].toLocaleString('en')}`;
     }
 }
 
 function sumList() {
-    console.log('거의 다햇다!')
+    const sumPrint = document.createElement('div');
+    sumPrint.classList.add('sum-list')
+    const sumSpan = document.createElement('span')
+    sumSpan.innerText = 'Total: '
+    sumPrint.appendChild(sumSpan)
+    const sumSmall = document.createElement('small')
+    let sumValue = 0;
+    for (let i=0 ; i<users.length ; i++) {
+        if(!isNaN(users[i][1])) {
+            sumValue += users[i][1]
+            }
+        }
+    sumSmall.innerText = `$${sumValue.toLocaleString('en')}`;
+    sumPrint.appendChild(sumSmall)
+    lists.appendChild(sumPrint)
 }
