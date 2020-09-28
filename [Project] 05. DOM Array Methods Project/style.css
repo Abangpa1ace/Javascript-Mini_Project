@@ -87,15 +87,26 @@ section.contents {
     align-items: center;
     padding: 0 5px;
     margin: 15px 0;
+    background: transparent;
 }
 
-.list span {
+.list span, .sum-list small {
     font-size: 22px;
     font-weight: bold;
 }
 
-.list small {
+.list small, .sum-list span {
     font-size: 20px;
     font-weight: normal;
+}
+
+.sum-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 15px 5px;
+    background: #ffffff;
+    border-bottom: 1px double #000000;
 }
 
