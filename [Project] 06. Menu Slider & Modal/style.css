@@ -11,6 +11,13 @@ body {
     position: relative;
     background: #f4f4f4;
     min-height: 100vh;
+    overflow: hidden;   /* overflow 막고 transform Scale을 적용해봄 */
+    transition: transform 0.3s ease;
+}
+
+body.show-slide #container {
+    transform: scaleX(0.95);
+    transform-origin: 0px;
 }
 
 .filter {
@@ -29,6 +36,50 @@ button {
     cursor: pointer;
     color: #ffffff;
     font-weight: bold;
+}
+
+#slider {
+    position: absolute;
+    top: 0px;
+    left: -200px;
+    width: 200px;
+    height: 100vh;
+    background: #2e276e;
+    border-right: 0.5px solid #747474;
+    transition: transform 0.3s;
+}
+
+#slider * {
+    border-bottom: 0.5px solid #747474;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+#slider .profile-photo .img {
+    width: 80px;
+    height: 80px;
+    border: none;
+    background-image: url('증사.jpeg');
+    background-size: 100%;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.profile li {
+    height: 60px;
+    padding: 0 15px;
+    color: #fff;
+    line-height: 60px;
+}
+
+#container {
+    transition: transform 0.3s;
 }
 
 header {
@@ -66,12 +117,10 @@ header p {
     font-size: 24px;
 }
 
-#slider {
-    background: #c71b1b;
-}
-
 #main {
     padding: 40px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .contents {
@@ -97,15 +146,26 @@ header p {
     height: 490px;
     background: #ffffff;
     border-radius: 5px;
+    display: none;
     opacity: 0;
     z-index: 20;
-    transition: all 0.8s ease;
+    transition: opacity 0.5s ease;
 }
 
 #login h3 {
+    position: relative;
     color: #ffffff;
     padding: 10px 20px;
     background: #2e276e;
+}
+
+.login-close {
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    font-size: 16px;
+    position: absolute;
+    cursor: pointer;
 }
 
 .login-main {
