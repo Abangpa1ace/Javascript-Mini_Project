@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <title>07. Hangman Game</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Hangman</h1>
+        <p>Find the hiddeo word - Enter a letter</p>
+        <section class="game">
+            <svg class="man">
+                <line class="defalut" x1="10" y1="290" x2="70" y2="290"></line>
+                <polyline class="defalut" points = "40,290 40,20 160,20 160,60"></polyline>
+                <!-- man life -->
+                <circle class="life" cx="160" cy="80" r="20"></circle>
+                <line class="life" x1="160" x2="160" y1="100" y2="180"></line>
+                <line class="life" x1="160" x2="130" y1="130" y2="100"></line>
+                <line class="life" x1="160" x2="190" y1="130" y2="100"></line>
+                <line class="life" x1="160" x2="120" y1="180" y2="220"></line>
+                <line class="life" x1="160" x2="200" y1="180" y2="220"></line>
+            </svg>
+            <div class="words">
+                <p>Wrong Words</p>
+                <div class="wrong-words">a,b,c</div>
+            </div>
+        </section>
+        <div class="letter">
+            <span>d</span>
+            <span>e</span>
+            <span>f</span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
