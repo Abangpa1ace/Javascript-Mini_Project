@@ -10,7 +10,7 @@
 <body>
     <div id="container">
         <h1>Hangman</h1>
-        <p>Find the hiddeo word - Enter a letter</p>
+        <p>Find the hidden word - Enter a letter</p>
         <section class="game">
             <svg class="man">
                 <line class="defalut" x1="10" y1="290" x2="70" y2="290"></line>
@@ -25,16 +25,11 @@
             </svg>
             <div class="words">
                 <p>Wrong Words</p>
-                <div class="wrong-words">a,b,c</div>
+                <div class="wrong-words"></div>
             </div>
         </section>
-        <div class="letter">
-            <span>d</span>
-            <span>e</span>
-            <span>f</span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="letter"></div>
+        <div class="error-msg">You have already entered this letter!</div>
     </div>
     <script src="app.js"></script>
 </body>
