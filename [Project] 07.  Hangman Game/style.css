@@ -8,7 +8,6 @@
 }
 
 body {
-    position: relative;
     background: #3d5674;
     min-height: 100vh;
     color: #ffffff;
@@ -26,7 +25,9 @@ body .filter {
 }
 
 #container {
+    position: relative;
     max-width: 1400px;
+    height: 100vh;
     text-align: center;
     margin: 0 auto;
     padding: 40px;
@@ -87,9 +88,7 @@ h1 {
     border-bottom: 4px solid #6992d1;
 }
 
-.error-msg.up {
-    transform: translate(-50%, -40px);
-}
+
 
 .error-msg {
     position: absolute;
@@ -101,4 +100,39 @@ h1 {
     height: 40px;
     padding: 10px;
     background: rgb(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.error-msg.up {
+    transform: translate(-50%, -40px);
+}
+
+.end-msg {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    background: #54a5db;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 30px 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+}
+
+.end-msg button {
+    outline: 0;
+    border: none;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    color: #54a5db;
+    z-index: 20;
+    cursor: pointer;
 }
