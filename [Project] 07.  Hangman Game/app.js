@@ -9,11 +9,16 @@ const manLifeList = document.getElementsByClassName('life');
 const wrongWords = document.querySelector('.wrong-words')
 const letter = document.querySelector('.letter')
 const errorMsg = document.querySelector('.error-msg')
+const endMsg = document.querySelector('.end-msg')
+const endMsgLtr = document.querySelector('.end-msg-letter')
+const endMsgBtn = document.querySelector('.end-msg-btn')
 
 //Event Listeners
 getRandomText();
-document.addEventListener('keydown', keydownCheck)
-
+document.addEventListener('keypress', keydownCheck)
+endMsgBtn.addEventListener('click', () => {
+    location.reload();
+})
 //Functions
 
 function getRandomText() {
@@ -32,11 +37,17 @@ function getRandomText() {
 }
 
 function keydownCheck() {
+    //문자외 반환
+    const key = event.keyCode
+    if (key < 97 || key > 122) {return;}
     // 기입력 확인
-    let keycode = String.fromCharCode(event.keyCode);
+    const keycode = String.fromCharCode(key);
     if (allList.includes(keycode)) { 
         errorMsg.classList.add('up')
-        
+        setTimeout(() => {
+            errorMsg.classList.remove('up')
+        }, 3000)
+        return;
     }
 
     allList.push(keycode);
@@ -66,6 +77,8 @@ function winGame() {
         const filter = document.createElement('div');
         filter.className = "filter"
         document.body.appendChild(filter);
+        endMsg.style.display = "flex";
+        endMsgLtr.innerText = 'Congratulation!'
     }
 }
 
@@ -74,5 +87,7 @@ function loseGame() {
         const filter = document.createElement('div');
         filter.className = "filter"
         document.body.appendChild(filter);
+        endMsgLtr.innerText = 'Try again...'
+        endMsg.style.display = "flex";
     }
 }
