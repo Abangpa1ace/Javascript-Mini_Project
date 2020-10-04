@@ -11,11 +11,14 @@
     <div id="container">
         <h1>Meal Finder</h1>
         <div class="search-zone">
-            <input type="text" name="search" class="search" placeholder="Search for meals or keywords" autocomplete="on">
-            <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-            <button class="shuffle-btn"><i class="fa fa-random" aria-hidden="true"></i></button>
+            <div class="search-bar">
+                <input type="text" name="search" class="search" placeholder="Search for meals or keywords" autocomplete="on">
+                <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <button class="random-btn"><i class="fa fa-random" aria-hidden="true"></i></button>
         </div>
-        <div class="result-zone"> </div>
+        <p class="search-word"></p>
+        <div class="result-zone"></div>
     </div>
     <script src="app.js"></script>
 </body>
