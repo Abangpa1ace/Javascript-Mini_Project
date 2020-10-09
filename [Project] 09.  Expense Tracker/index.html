@@ -20,9 +20,15 @@
         </section>
         <section id="history">
             <h3>History</h3>
+            <div class="history-area"></div>
         </section>
-        <form id = "transaction" action="calculate">
+        <form id = "transaction">
             <h3>Add New Transaction</h3>
+            <h4>Text</h4>
+            <input type="text" name="text" id="transaction-text" value="" placeholder="Enter Text..." autocomplete="on">
+            <h4>Amount<br>(negative-expensive, positive-income)</h4>
+            <input type="number" name="cash" id="transaction-cash" value="" placeholder="Enter amount..." autocomplete="on">
+            <button type="submit" class="transaction-btn">Add Transaction</button>
         </form>
     </div>
     <script src="app.js"></script>
