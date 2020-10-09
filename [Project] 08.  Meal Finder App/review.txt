@@ -1,6 +1,26 @@
 [HTML&CSS] 
 
-[JS]
-1) 
+1) flex-wrap : 자식요소들의 너비가 부모요소보다 커지면 자동 줄바꿈되는 제어(기본 no-wrap)
+2) inline-flex : 부모요소에 적용. 전체 width가 아닌 본인 너비만큼 화면 차지
 
-[총평] 
+
+[JS]
+
+1) <form>태그와 submit 이벤트
+  - <form> 태그는 안에 모든 데이터를 웹 서버로 보냄
+    * action = "폼을 전송하는 서버 스크립트 파일"
+    * name = "폼 이름"
+    * accept-charset = "폼 전송에 사용할 문자 인코딩(utf-8)"
+    * target = "스크립트를 여는 위치"
+    * method = "http 메소드 : get(URL끝에 붙임) / post(URL끝에 붙이지 않음)"
+  
+  - 내부 태그종류
+    * <input> : type(text, password, button, submit, radio(선택지), checkbox, file 등 / name(서버 전송시 input 이름)
+    * <textarea> : 여러 줄의 텍스트(cols="가로크기", rows="세로크기")
+    * <select> : 여러 개 선택(선택지는 <option value="서버 전송값">)
+    * <label> : 태그의 제목(for = "id or class"로 대상태그 지정)
+
+  - input, button 등의 type = "submit" 지정시, submit 이벤트가 발생
+
+2) .innerHTML을 많이 사용해야겠다.
+  - schWord도 result.innerHTML에 포함시켜서 clear 동작을 없앨 수 있을듯
