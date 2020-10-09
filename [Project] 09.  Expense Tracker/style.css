@@ -21,7 +21,6 @@ body {
     margin: 150px auto;
     width: 400px;
     text-align: center;
-    border: 1px solid blue;
 }
 
 h1 {
@@ -31,9 +30,13 @@ h1 {
 h3 {
     text-align: left;
     padding: 5px 0;
-    border-bottom: 1px solid #000000;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 20px;
     font-weight: bold;
+}
+
+#history h3 {
+    margin-bottom: 0;
 }
 
 #cash {
@@ -55,7 +58,7 @@ h3 {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-    box-shadow: 0 3px 3px 3px #cccccc;
+    box-shadow: 0 2px 1px 1px #cccccc;
 }
 
 .inout-cash > p {
@@ -82,3 +85,65 @@ h3 {
 .expense {
     color: var(--minus-color);
 }
+
+#transaction {
+    text-align: left;
+}
+
+#transaction input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+}
+
+.history-area {
+    padding: 10px 0;
+}
+
+.history {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px 10px 10px;
+    font-size: 16px;
+    background: #ffffff;
+    box-shadow: 2px 2px 2px #cccccc;
+    margin: 10px 0;
+}
+
+.history::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 6px;
+    height: 100%;
+}
+
+.history.plus::after {
+    background: var(--plus-color);
+}
+
+.history.minus::after {
+    background: var(--minus-color);
+}
+
+.transaction-btn {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background: #9e84e5;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 2px;
+    box-shadow: 0 0 3px 0 #8ecaec;
+    cursor: pointer;
+}
+
+
