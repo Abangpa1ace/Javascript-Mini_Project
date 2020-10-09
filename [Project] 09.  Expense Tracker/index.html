@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <title>09. Expense Tracker</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Expense Tracker</h1>
+        <section id="cash">
+            <p>YOUR BALANCE</p>
+            <p class="total-cash">$0.00</p>
+            <div class="inout-cash">
+                <p>INCOME<br><span class="income">$0.00</span></p>
+                <p>EXPENSE<br><span class="expense">$0.00</span></p>
+            </div>
+        </section>
+        <section id="history">
+            <h3>History</h3>
+        </section>
+        <form id = "transaction" action="calculate">
+            <h3>Add New Transaction</h3>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
