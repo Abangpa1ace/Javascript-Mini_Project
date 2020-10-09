@@ -1,6 +1,35 @@
 [HTML&CSS] 
 
-[JS]
-1) 
+1) HTML5에 추가된 <svg>태그 기본적인 사용법 익힘 : line, polyline(꺾인선), circle
+2) <svg>는 stroke로 선, fill로 채우기 속성 제어
+3) 특정 조건에 보이기 : opacity < display < visibility
 
-[총평] 
+
+[JS]
+
+1) key관련 이벤트 리스너: keyup, keydown, keypress
+
+2) 새로고침: location.reload()
+
+3) 글자별 배열화(정규식) : "abcd".match(/./g)
+
+4) 랜덤선택 : Math.random() - 0 ~ 0.9999999 까지 무작위 수
+  * let random = rdmList[Math.floor(Math.random() * rdmList.length)]
+
+5) keypress 시 ASCII Code 확인
+  * let key = e.keyCode - (a(97)~z(122))
+  * let keyletter = String.fromCharCode(key) - ASCII -> 문자열 변환  //(97,98,99) 여러개 출력도 가능
+  * let keycode =  keyletter.charCodeAt([자릿수]) - 문자열 -> ASCII 반환
+
+6) setTimeout() 시간차 제어
+  * error.classList.add('up');
+    setTimeout(() => {
+        error.classList.remove('up')
+    }, 3000)  //3000ms = 3초
+
+7) JS 배열 제어함수
+  * .includes([요소]) : 배열 포함여부 - true/false 반환
+  * .indexOf([요소]) : 해당 요소 index 반환
+  * .splice([인덱스], 길이) : 해당 [인덱스]부터 [길이]만큼 배열에서 삭제
+  * .slice([인덱스], 길이) : 해당 [인덱스]부터 [길이]만큼 잘라낸 배열을 가져옴
+  * .join('문구') : 배열 요소들을 '문구'로 연결한 문자열 반환
