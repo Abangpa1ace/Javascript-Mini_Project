@@ -116,6 +116,28 @@ h3 {
     margin: 10px 0;
 }
 
+.history button {
+    position: absolute;
+    text-align: center;
+    line-height: 25px;
+    left: -20px;
+    width: 20px;
+    height: 25px;
+    border: none;
+    background: #fa8383;
+    color: #ffffff;
+    font-size: 16px;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.history:hover button {
+    opacity: 1;
+    visibility: visible;
+}
+
 .history::after {
     position: absolute;
     top: 0;
