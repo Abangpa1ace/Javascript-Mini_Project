@@ -31,20 +31,26 @@ function newTransaction(e) {
 
     const textVal = textInput.value;
     const cashVal = cashInput.value;
-    addHistory(textVal, cashVal)
 
-    const historyAll = document.querySelectorAll('.history')
-    const historyList = [...historyAll].map(function(history) {
-        let obj = new Object();
-        obj['text'] = history.querySelector('p').innerText;
-        obj['cash'] = history.querySelector('span').innerText;
-        return obj;
-    })
-    cashCount(historyList)
-    localStorage.setItem('historylist', JSON.stringify(historyList))
-    
-    textInput.value = "";
-    cashInput.value = "";
+    if(textVal === "" || cashVal === "") {
+        alert('Please input text and amount!')
+    }
+    else {
+        addHistory(textVal, cashVal)
+
+        const historyAll = document.querySelectorAll('.history')
+        const historyList = [...historyAll].map(function(history) {
+            let obj = new Object();
+            obj['text'] = history.querySelector('p').innerText;
+            obj['cash'] = history.querySelector('span').innerText;
+            return obj;
+        })
+        cashCount(historyList)
+        localStorage.setItem('historylist', JSON.stringify(historyList))
+        
+        textInput.value = "";
+        cashInput.value = "";
+    }
 }
 
 function addHistory(text, cash) {
@@ -66,7 +72,7 @@ function addHistory(text, cash) {
 
 function deleteHistory(e) {
     e.target.parentNode.remove()
-    
+
     const historyAll = document.querySelectorAll('.history')
     const historyList = [...historyAll].map(function(history) {
         let obj = new Object();
