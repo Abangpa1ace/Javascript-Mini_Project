@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-    <title>10. Custom Music Player</title>
+    <title>09. Expense Tracker</title>
 </head>
 <body>
     <div id="container">
-        <h1>Music Player</h1>
-        <div id="player">
-            <div class="btn-area">
-                <audio class="audio" src="./music/summer.mp3" type="audio/mpeg">
-                </audio>
-                <div class="cd"></div>
-                <button class="backward"><i class="fa fa-backward" aria-hidden="true"></i></button>
-                <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <button class="forward"><i class="fa fa-forward" aria-hidden="true"></i></button>
+        <h1>Expense Tracker</h1>
+        <section id="cash">
+            <p>YOUR BALANCE</p>
+            <p class="total-cash">$0.00</p>
+            <div class="inout-cash">
+                <p>INCOME<br><span class="income">$0.00</span></p>
+                <p>EXPENSE<br><span class="expense">$0.00</span></p>
             </div>
-            <div class="progress-area">
-                <h6>Title</h6>
-                <div class="progress-bar">
-                    <div class="current-bar"></div>
-                </div>
-            </div>
-        </div>
+        </section>
+        <section id="history">
+            <h3>History</h3>
+            <div class="history-area"></div>
+        </section>
+        <form id = "transaction">
+            <h3>Add New Transaction</h3>
+            <h4>Text</h4>
+            <input type="text" name="text" id="transaction-text" value="" placeholder="Enter Text..." autocomplete="on">
+            <h4>Amount<br>(negative-expensive, positive-income)</h4>
+            <input type="number" name="cash" id="transaction-cash" value="" placeholder="Enter amount..." autocomplete="on">
+            <button type="submit" class="transaction-btn">Add Transaction</button>
+        </form>
     </div>
     <script src="app.js"></script>
 </body>
