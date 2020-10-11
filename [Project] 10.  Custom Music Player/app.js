@@ -1,24 +1,56 @@
 'use strict';
 
 //Selectors
-const musicList = [];
+let musicIndex = 0;
+const musicList = ['hey', 'ukulele', 'summer'];
 const player = document.getElementById('player')
 const audio = document.querySelector('.audio')
 const cd = document.querySelector('.cd')
 const backward = document.querySelector('.backward')
 const forward = document.querySelector('.forward')
 const play = document.querySelector('.play')
-const progressArea = document.querySelector('.progress-area')
+const playTitle = document.querySelector('.play-title')
 const progressBar = document.querySelector('.progress-bar')
 const currentBar = document.querySelector('.current-bar')
 
 
-
 //Event Listeners
+playSet();
+backward.addEventListener('click', playBackward)
+forward.addEventListener('click', playForward)
 audio.addEventListener('timeupdate', progressBarRun);
-play.addEventListener('click', playAudio)
+play.addEventListener('click', playAudio);
 
 //Functions
+function playSet() {
+    let music = musicList[musicIndex]
+    audio.src = `./music/${music}.mp3`
+    playTitle.innerText = `${music}`
+    cd.style.background = `url(./img/${music}.jpg) no-repeat center`
+    cd.style.backgroundSize = 'cover';
+    console.log(musicIndex)
+}
+
+function playBackward() {
+    musicIndex === 0 ? musicIndex = musicList.length - 1 : musicIndex--
+    playSet();
+    audio.play();
+    if (!player.classList.contains('playing')) {
+        player.classList.add('playing');
+        play.innerHTML = '<i class="fa fa-pause" aria-hidden="true">'
+    }
+}
+
+function playForward() {
+    musicIndex === musicList.length - 1 ? musicIndex = 0 : musicIndex++
+    playSet();
+    audio.play();
+    if (!player.classList.contains('playing')) {
+        player.classList.add('playing');
+        play.innerHTML = '<i class="fa fa-pause" aria-hidden="true">'
+    }
+}
+
 function playAudio() {
     player.classList.toggle('playing');
     audio.play();
@@ -36,7 +68,5 @@ function progressBarRun() {
     let current = Math.floor(audio.currentTime);
     const progressBarWidth = progressBar.offsetWidth;
     let currentBarWidth = progressBarWidth * (current/max);
-    console.log(max, current, currentBarWidth)
     currentBar.style.width = `${currentBarWidth}px`
 }
-
