@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    outline: 0;
+}
+
+body {
+    background: linear-gradient(180deg, #f5c8da 10%, #faf4f7) no-repeat;
+    min-height: 100vh;
+    padding-top: 300px;
+}
+
+#container {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 120px;
+    font-size: 36px;
+}
+
+#player {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 1px 10px 10px 5px #db99b3;
+}
+
+.cd {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: url(./img/ukulele.jpg) no-repeat center;
+    background-size: cover;
+    /* animation-fill-mode: forwards; */
+}
+
+#player.playing .cd {
+    animation: rotate_cd 2s linear infinite forwards;
+}
+.cd::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.btn-area {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-area button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #cfcfcf;
+    cursor: pointer;
+}
+
+.btn-area .play {
+    font-size: 28px;
+    color: #aaaaaa;
+}
+
+.progress-area {
+    position: absolute;
+    top: 0px;
+    left: 5%;
+    width: 90%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px 10px 0 130px;
+    text-align-last: left;
+    z-index: -10;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#player.playing .progress-area {
+    transform: translateY(-70px);
+    opacity: 1;
+}
+
+.progress-area h6 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    padding: 0.5px;
+    background: #cfcfcf;
+    border-radius: 5px;
+}
+
+.current-bar {
+    width: 100%;
+    height: 100%;
+    background: #f07ff0;
+}
+
+@keyframes rotate_cd {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
