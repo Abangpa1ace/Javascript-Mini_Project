@@ -1,6 +1,17 @@
 [HTML&CSS] 
 
-[JS]
-1) 
+1) <form>태그 내 제목은 <label>로 표현
+  - <label for="transaction-text">Text</label> : for 내 id로 input과 연결
 
-[총평] 
+2) .inout-cash 내 나눔선을 각각 { flex : 1 }을 주고, first-child에 { border-right: }
+
+
+[JS]
+
+1) input값 체크시, .trim() 활용하여 좌우 공백제거!
+
+2) 둘 중 한가지 클래스를 더할 때, if~else 대신 :구문 사용
+  - history.classList.add(cash<0 ? 'minus' : 'plus')
+
+3) historyList에서 cash만 .map 처리 -> 이후 .filter로 양/음 구분 -> .reduce(acc, cur)로 누적값 계산
+  * 배열 객체들을 좀 더 적극적으로 사용해야겠다!
