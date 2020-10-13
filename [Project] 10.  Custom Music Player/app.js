@@ -19,6 +19,7 @@ playSet();
 backward.addEventListener('click', playBackward)
 forward.addEventListener('click', playForward)
 audio.addEventListener('timeupdate', progressBarRun);
+audio.addEventListener('ended', playForward);
 play.addEventListener('click', playAudio);
 
 //Functions
@@ -28,7 +29,6 @@ function playSet() {
     playTitle.innerText = `${music}`
     cd.style.background = `url(./img/${music}.jpg) no-repeat center`
     cd.style.backgroundSize = 'cover';
-    console.log(musicIndex)
 }
 
 function playBackward() {
@@ -70,3 +70,4 @@ function progressBarRun() {
     let currentBarWidth = progressBarWidth * (current/max);
     currentBar.style.width = `${currentBarWidth}px`
 }
+
