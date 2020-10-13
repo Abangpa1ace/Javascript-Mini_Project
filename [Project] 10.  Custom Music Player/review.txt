@@ -1,9 +1,43 @@
 [HTML&CSS] 
 
-1)
+1) <audio> 태그 : 반드시 다른 <div>에 귀속될 필요없음(정답은 독립적으로 코드)
+
+2) cd 이미지 그릴 때, <div>로 그림. 안에, <img>태그로 이미지 삽입하여 background 조정 최소화
+
+3) div 자체에 background: url()과 div내 img태그 두 가지 방법이 있음을 인지하고 있어야겠다. 
+   내부 <img>태그로 배경을 채울때, 
+  - { width: inherit; 
+      height: 110px;
+      object-fit: cover;  // 콘텐츠 가로-세로비 유지하면서 박스를 채움
+    }
+  - object-fit: 
+   * contain: 대체 콘텐츠 가로-세로비 유지하며, 요소 콘텐츠 안으로 들어감(비율이 안맞으면 레터박스처럼)
+   * cover: 대체 콘텐츠 가로-세로비 유지하며, 요소 콘텐츠를 채움. 남는 부분은 잘려나감.
+   * fill: 요소 콘텐츠 비율에 맞게 대체 콘텐츠로 채움. 비율에 맞춰 늘어남.
+   * none: 대체 콘텐츠 크기조절 없음.
+   * scale-down: none과 contain 중 대체 콘텐츠가 작아지는 방법을 자동선택.
+
+4) @keyframes animation {}은 애니메이션 지정요소 바로 밑에 css작성.
+   animation 설정시, 반드시 %일 필요 없음(정답은 from, to로)
+   
+5) animation 현상태에서 멈추는 방법
+  - { animation-fill-mode: forwards; } : 현상태를 인식하는 것으로 translate에 유리.
+  - .cd에 애니메이션을 주고, { animation-play-state: paused; } -> .playing .cd에 { animation-play-state: running; }
+    : rotate 멈출때는 위같은 제어방식이 유리할 듯.
 
 
 [JS]
 
-1) 
+1) playAudio() 함수에서 .playing 토글보다, playAudio() / pauseAudio() 두 함수를 각각 만듬.
+   playForward(), playBackward() if절을 playAudio() 함수로 대체가능. 토글로 만들어서 대체하기가 복잡했었다.
 
+2) 정답에선 progressBar 크기를 clientWidth로 가져옴.
+  - offsetWidth: 실제 보여지는 요소 전체크기(padding, border, scrollbar 크기 포함)
+  - clientWidth: 실제 보여지는 요소 자체크기(padding, border, scrollbar 크기 제외)
+  - scrollWidth: 요소 본래크기(스크롤바 내리는 전체 영역의 크기)
+  - .getBoundingClientRect(): offsetWidth와 동일하나, 렌더링된 크기를 가져옴.
+    * transform 적용시 달라짐!
+      { width: 100px; transform: scale(0.5); } : offsetWidth는 100px, getBoundingClientRect는 50px 리턴
+
+3) progressBarRun() 함수를, setProgress(e)와 updateProgress(e) 두 함수로 각각 셋팅함.
+  - setProgress(e)에 e(클릭).offsetX를 인식하여, audio.currentTime을 수정하는 기능까지 구현.
