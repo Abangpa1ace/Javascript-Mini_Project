@@ -9,11 +9,6 @@ const post = document.querySelectorAll('.post')
 const postTitle = document.querySelectorAll('.post-title')
 const loader = document.querySelector('.loader')
 
-//Event Listeners
-// loading event
-window.addEventListener('DOMContentLoaded', () => {
-    loader.style.visibility = 'hidden';
-})
 
 addPosts();
 window.onscroll = checkScroll;
@@ -27,6 +22,7 @@ async function addPosts() {
         postIndex++;
     }
     loadPosts(postList)
+    loader.classList.remove('loading')
 }
 
 function loadPosts(list) {
@@ -44,6 +40,7 @@ function loadPosts(list) {
 
 function checkScroll() {
     if ((document.documentElement.scrollHeight-document.documentElement.scrollTop) === document.documentElement.clientHeight) {
+        loader.classList.add('loading')
         addPosts()
     }
 }
