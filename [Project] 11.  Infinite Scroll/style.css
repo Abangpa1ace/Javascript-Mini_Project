@@ -74,11 +74,40 @@ body {
 }
 
 .loader {
-    width: 300px;
-    height: 50px;
-    font-size: 24px;
-    color: red;
-    text-align: center;
-    background: #ffffff;
+    margin-top: 30px;
+    width: 60px;
+    height: 80px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    position: relative;
+}
+
+.loader.loading {
     visibility: visible;
+    opacity: 1;
+}
+
+.ball {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 1px 1px 1px 0px #000000;
+    position: absolute;
+}
+
+.ball1 {
+    left: 40px;
+    animation: ballone 3s infinite linear;
+}
+
+.ball3 {
+    right: 40px;
+}
+
+@keyframes ballone {
+    from {transform: translateY(0px)}
+    to {transform: translateY(-20px)}
 }
