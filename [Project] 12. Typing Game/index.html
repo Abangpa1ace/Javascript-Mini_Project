@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <title>12. Typing Game</title>
+</head>
+<body>
+    <header class="header">
+        <span>Difficulty</span>
+        <select class="difficulty-select">
+            <option value="5">Easy</option>
+            <option value="3">normal</option>
+            <option value="1">Hard</option>
+        </select>
+    </header>
+    <div id="container">
+        <h2>Speed Typer</h2>
+        <div class="game-info">
+            <p>Time left: <span class="time">10</span>s</p>
+            <p>Score: <span class="score">0</span></p>
+        </div>
+        <div class="game-word">
+            Type the following:
+            <p class="word">tense</p>
+        </div>
+        <input type="text" class="input-word" placeholder="Type the word here!" autofocus>
+    </div>
+    <button class="difficulty-btn"><i class="fa fa-cog" aria-hidden="true"></i></button>
+    <script src="app.js"></script>
+</body>
+</html>
