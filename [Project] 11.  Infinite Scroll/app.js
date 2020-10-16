@@ -5,13 +5,13 @@ let postIndex = 1;
 let postList = [];
 const input = document.querySelector('.input-bar')
 const postArea = document.querySelector('.post-area')
-const post = document.querySelectorAll('.post')
-const postTitle = document.querySelectorAll('.post-title')
 const loader = document.querySelector('.loader')
 
-
+//Event Listeners
 addPosts();
+input.addEventListener('input', filterPosts)
 window.onscroll = checkScroll;
+
 
 //Functions
 async function addPosts() {
@@ -22,7 +22,6 @@ async function addPosts() {
         postIndex++;
     }
     loadPosts(postList)
-    loader.classList.remove('loading')
 }
 
 function loadPosts(list) {
@@ -36,6 +35,21 @@ function loadPosts(list) {
             <p class="post-letter">${list[i].body}</p>`
         postArea.appendChild(newpost);
     }
+    loader.classList.remove('loading')
+}
+
+function filterPosts() {
+    const inputVal = input.value;
+    const posts = document.querySelectorAll('.post');
+    console.log(inputVal)
+    for (let i=0 ; i<postList.length ; i++) {
+        if (!postList[i].title.includes(`${inputVal}`) && !postList[i].body.includes(`${inputVal}`)) {
+            posts[i].style.display = 'none'
+        }
+        else {
+            posts[i].style.display = 'block';
+        }
+    } 
 }
 
 function checkScroll() {
