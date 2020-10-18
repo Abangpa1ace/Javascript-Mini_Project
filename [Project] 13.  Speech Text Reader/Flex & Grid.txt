@@ -1,0 +1,81 @@
+[CSS Flex & Grid by.1분코딩]
+
+
+[Flex]
+
+<부모요소>
+1. 부모요소에 {display: flex;}
+  - 기본적으로 가로배치, 컨텐츠만큼 기본너비(inline-block 유사)
+
+2. flex-direction
+  - row: 가로배치[기본]
+  - column: 세로배치
+  - row-reversed, column-reversed
+
+3. flex-wrap(창크기가 부모요소보다 작아질 떄 동작)
+  - nowrap: 가려짐[기본]
+  - wrap: 자동 줄바꿈
+  - wrap-reversed
+
+4. justify-content(기준축 방향 정렬)
+  - flex-start / center / flex-end
+  - space-between: 자식요소 간 여백 같음
+  - space-around: 좌우 + 자식요소 간 여백 같음
+
+5. align-items(기준축 반대방향 정렬)
+  - stretch: 100%[기본값]
+  - flex-start / center / flex-end(컨텐츠 크기만큼)
+
+6. align-content({flex-wrap: wrap;} wrap된 경우 정렬방법)
+  - flex-start / center / flex-end(컨텐츠 크기만한 상태로 줄바꿈)
+  - space-between: 기준축 반대방향 여백이 같도록
+  - space-around: 기준축 반대방향 + 상하여백까지 같도록
+
+<자식요소>
+7. flex: 숫자(자식요소 크기 비율)
+  - {flex-grow: 1(비율);} : 확장시, 남는 여백을 해당비율로 나눔
+  - {flex-basis: auto(컨텐츠 제외 비율분할[기본]), 0(컨텐츠 포함 비율분할)}
+  - {flex(=flex-shrink): 1(비율);} : 축소시, 자식요소 비율(flex-basis: 0% 자동설정) *범용적*
+
+  * flex: 숫자가 없는 자식요소는 크기고정, 숫자가 있는 자식요소만 신축성있게 늘어남.
+
+8. align-self: flex-start / center / flex-end(컨텐츠 크기만큼)
+
+9. order: 숫자(순서) - 기준축 방향으로(HTML 구조는 안바뀜)
+
+
+[Grid]: 여러개 자식요소를 반복적으로 배치할 때 유용!
+
+<부모요소>
+1. 부모요소에 {
+    display: grid;
+    grid-template-columns: 4fr 6fr;}
+
+2. grid-template-columns(그리드 배치방법)
+  - 40% 60%: 홀수40% 짝수60%(grid-gap시 밀려남)
+  - 4fr 6fr: 홀수40% 짝수60%(grid-gap시 자동마줌) *범용적*
+  - repeat(3, 1fr): 3개씩, 균일
+
+3. grid-gap: 1rem(자식요소 간 간격)
+  * grid-template-column에서 fr(action) 쓰는 이유: %로 설정한 뒤 grid-gap을 주면, 창밖으로 밀려남(스크롤바)
+
+4. grid-auto-rows(자식요소들 세로크기 통일)
+  - 300px: 특정 사이즈
+  - minmax(200px, auto): 최소/최대값 설정(각 사이즈에 최적화됨)
+
+5. justify-items: 자식요소 각각 정렬(각자 영역내에서 이동함)
+  - start / center / end(컨텐츠 크기만큼)
+
+6. align-items: 자식요소 각각 기준축 반대방향 정렬(각자 영역내에서 이동함)
+  - start / center / end(컨텐츠 크기만큼)
+
+<자식요소>
+7. justify-self, align-self
+
+8. grid-column(자식요소 크기 전체기준 정렬)
+  - 1/4: 1열 - 4열 (=header)
+
+9. grid-row
+  - 2/4: 2행 - 4행 (=aside)
+  * 자동 왼쪽정렬됨 -> {grid-column: 3(시작점)}
+  * 둘이 겹치게 될 경우 background가 섞이기도 함.(투명도)
