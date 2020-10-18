@@ -1,9 +1,27 @@
 [HTML&CSS] 
 
-1)
+1) select box를, <form> 안에 <label> 및 <select>로 만듬.
+
+2) <input>에 autofocus(로드 시, 바로 포커스) 알게됨. autocomplete="off"로 게임 정밀도 향샹.
 
 
 [JS]
 
-1) 
+1) 난이도는 localStorage로 저장 및 불러오기
+  * let difficulty = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
+  * difficulty.value = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty) : '3';
 
+2) const timeInterval = setInterval(updateTime, 1000)
+  - 위와 같이, countDown()을 하나의 변수로 지정.
+    updateTime() == countDown() -> gameOver() 전에 clearInterval(timeInterval)로 인터벌 정지.
+
+3) gameOver() innerHTML시, <button onclick="location.reload()"> 로 추가 함수생성 없이 기능 추가
+
+4) word.innerText = wordList[Math.floor(Math.random() * wordList.length)] 를,
+   getRandomWord() 함수로 공통구현.
+
+5) select.addEventListener('change', e => {
+    difficulty = e.target.innerText;
+    localStorage.setItem('difficulty', difficulty)
+})
+  - 이처럼, select value를 locaStorage에 저장시켜서 selected
