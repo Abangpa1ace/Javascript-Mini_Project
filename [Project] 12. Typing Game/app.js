@@ -16,7 +16,7 @@ const reloadBtn = document.querySelector('.end-btn')
 
 //Event Listeners
 countDown();
-select.addEventListener('change', () => {
+select.addEventListener('change', () => {       //selected는 localStorage로 구현.
     const sl = select.options;
     for (let i=0 ; i<sl.length ; i++) {
         if (sl[i].value === select.value) {
@@ -57,9 +57,5 @@ function gameOver() {
     gameBoard.innerHTML = `
         <h1>Time ran out</h1>
         <p class='end-info'>Your final score is ${point}</p>
-        <button class='end-btn' onclick="reload()">Reload</button>`
-}
-
-function reload(e) {
-    location.reload();
+        <button class='end-btn' onclick="location.reload()">Reload</button>`
 }
