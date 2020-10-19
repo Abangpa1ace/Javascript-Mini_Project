@@ -12,6 +12,11 @@ body {
     background: #f0d8d8;
     height: 100vh;
     padding: 20px;
+    display: flex;
+}
+
+button, .text {
+    cursor: pointer;
 }
 
 #container {
@@ -19,7 +24,7 @@ body {
     padding: 20px 0;
 }
 
-.text-box {
+.text-btn {
     font-size: 18px;
     padding: 5px 10px;
     border-radius: 5px;
@@ -34,36 +39,120 @@ body {
     height: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 250px;
     grid-gap: 10px;
 }
 
 .text {
     position: relative;
     border-radius: 10px;
+    height: 250px;
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.3);
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.text.reading {
+    box-shadow: 0px 0px 10px 5px #e58484;
 }
 
 .text > img {
+    width: 100%;
     height: 85%;
-    background-size: cover;
+    object-fit: cover;
 }
 
 .text > .text-area {
     position: absolute;
     width: 100%;
+    min-height: 15%;
     bottom: 0px;
     font-size: 18px;
     font-weight: 600;
     color: #fff;
-    height: 15%;
     background: #e58484;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.text-box {
+    position: absolute;
+    text-align: left;
+    left: 50%;
+    top: -50%;
+    color: #ffffff;
+    transform: translateX(-50%);
+    width: 550px;
+    padding: 20px;
+    background: #2b2524;
+    z-index: 10;
+    transition: all 1s;
+}
+
+.text-box.show {
+    top: 25%;
+}
+
+.quit-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#text-form {
+    width: 100%;
+    height: 280px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#text-form > * {
+    width: 100%;
+    border: none;
+}
+
+.text-title {
+    font-size: 20px;
+}
+
+.lang-list {
+    height: 30px;
+    background: #e58484;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.text-input {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    height: 150px;
+    vertical-align: top;
+}
+
+.read-btn {
+    height: 40px;
+    background: #e58484;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.read-btn:focus {
+    animation: btn_ani 0.2s;
+}
+
+@keyframes btn_ani {
+    50% {transform: scale(0.95);}
+    0%, 100% {transform: scale(1);}
+}
 
 @media (max-width: 1026px) {
     .text-default {
@@ -76,3 +165,4 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
