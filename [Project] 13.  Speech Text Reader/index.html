@@ -10,23 +10,31 @@
 <body>
     <div id="container">
         <h1>Speech Text Reader</h1>
-        <button class="text-box">Toggle Text Box</button>
+        <button class="text-btn">Toggle Text Box</button>
         <ul class="text-default">
             <li class="text"><img src="./img/drink.jpg" alt=""><p class="text-area">I'M THIRSTY</p></li>
-            <li class="text"><img src="./img/food.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/tired.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/hurt.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/happy.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/angry.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/sad.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/scared.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/outside.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/home.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/school.jpg" alt=""><p class="text-area">I'M </li>
-            <li class="text"><img src="./img/grandma.jpg" alt=""><p class="text-area">I'M </li>
+            <li class="text"><img src="./img/food.jpg" alt=""><p class="text-area">I'M HUNGRY</p></li>
+            <li class="text"><img src="./img/tired.jpg" alt=""><p class="text-area">I'M TIRED</p></li>
+            <li class="text"><img src="./img/hurt.jpg" alt=""><p class="text-area">I'M HURTED</p></li>
+            <li class="text"><img src="./img/happy.jpg" alt=""><p class="text-area">I'M HAPPY</p></li>
+            <li class="text"><img src="./img/angry.jpg" alt=""><p class="text-area">I'M ANGRY</p></li>
+            <li class="text"><img src="./img/sad.jpg" alt=""><p class="text-area">I'M SAD</p></li>
+            <li class="text"><img src="./img/scared.jpg" alt=""><p class="text-area">I'M SCARED</p></li>
+            <li class="text"><img src="./img/outside.jpg" alt=""><p class="text-area">I WANT TO GO OUTSIDE</p></li>
+            <li class="text"><img src="./img/home.jpg" alt=""><p class="text-area">I WANT TO GO HOME</p></li>
+            <li class="text"><img src="./img/school.jpg" alt=""><p class="text-area">I WANT TO GO TO SCHOOL</p></li>
+            <li class="text"><img src="./img/grandma.jpg" alt=""><p class="text-area">I WANT TO GO TO GRANDMOM</p></li>
         </ul>
+        <div class="text-box">
+            <button class="quit-btn">X</button>
+            <form id="text-form">
+                <label for="text-form" class="text-title">Choose Voice</label>
+                <select class="lang-list"></select>
+                <textarea class="text-input" placeholder="Enter text to read..."></textarea>
+                <button type="button" class="read-btn">Read Text</button>
+            </form>
+        </div>
     </div>
     <script src="app.js"></script>
-    
 </body>
 </html>
