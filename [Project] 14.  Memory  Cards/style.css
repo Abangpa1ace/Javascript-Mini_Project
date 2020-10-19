@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    outline: 0;
+}
+
+body {
+    position: relative;
+    background: #f4f4f4;
+    min-height: 100vh;
+}
