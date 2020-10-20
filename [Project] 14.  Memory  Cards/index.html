@@ -8,21 +8,36 @@
     <title>14. Memory Card</title>
 </head>
 <body>
-    <div id="container">
+    <main id="container">
         <div class="title">
             <h1>Memory Cards</h1>
-            <button>+ Add New Card</button>
+            <button class="add-btn"><i class="fa fa-plus" aria-hidden="true"></i> Add New Card</button>
         </div>
         <div class="card-container">
-
+            <!-- <div class="card">example
+                <span class="filp"><i class="fa fa-reply-all" aria-hidden="true"></i>Flip</span>
+            </div> -->
         </div>
         <div class="card-list">
-            <button class=".before"></button>
+            <button class="before"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
             <span class="card-count"></span>
-            <button class=".after"></button>
+            <button class="after"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
-        <button>Clear Cards</button>
+    </main>
+    <button class="clear-btn"><i class="fa fa-trash" aria-hidden="true"></i> Clear Cards</button>
+    
+    <!-- Add New Card -->
+    <div id="new-card-container">
+        <div class="new-card">
+            <h1>Add New Card<button class="close-new-btn">X</button></h1>
+            <p>Question</p>
+            <textarea class="new-card-q" placeholder="Enter Question.."></textarea>
+            <p>Answer</p>
+            <textarea class="new-card-a" placeholder="Enter Answer.."></textarea>
+            <button class="add-new-btn"><i class="fa fa-plus" aria-hidden="true"></i> Add Card</button>
+        </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
