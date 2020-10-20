@@ -4,11 +4,156 @@
     box-sizing: border-box;
     list-style: none;
     font-family: 'Open Sans', sans-serif;
-    outline: 0;
 }
 
 body {
     position: relative;
-    background: #f4f4f4;
-    min-height: 100vh;
+    background: #fcfcfc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button, .card {
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #888888;
+    border-radius: 3px;
+}
+
+#container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    margin: 0 auto;
+    position: relative;
+    width: 500px;
+}
+
+.add-btn {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    padding: 5px;
+}
+
+.card-container {
+    height: 300px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 500px;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 340;
+    background: #ffffff;
+    border: none;
+    box-shadow: 0px 1px 10px 1px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.card.back {
+    transform: rotateX(180deg)
+}
+
+.flip {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #c4c4c4;
+}
+
+.card-list * {
+    font-size: 16px;
+    padding: 5px;
+    border: none;
+}
+
+.card-count {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.clear-btn {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 15px;
+    border: 1px solid #888888;
+    border-radius: 3px;
+}
+
+#new-card-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #beffe4;
+    z-index: -10;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-card-container.show {
+    visibility: visible;
+    z-index: 10;
+}
+
+.new-card {
+    width: 500px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.new-card h1 {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.close-new-btn {
+    top: 10px;
+    right: 110px;
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+}
+
+.new-card textarea {
+    width: 100%;
+    border: 1px #c4c4c4 solid;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px 0 20px;
+}
+
+.add-new-btn {
+    width: 100px;
+    align-self: center;
+    background: #fcfcfc;
+    font-size: 14px;
+    padding: 10px;
 }
