@@ -1,9 +1,25 @@
 [HTML&CSS] 
 
-1)
+1) <input type="text">는 한 줄 짜리, 여러줄은 <textarea>를 활용
+
+2) .btn:active {transform: scale(0.98)} 로 수축 애니메이션 구현가능(@keyframes 불필요)
+
+3) {transition: box-shadow 0.2s} 로 box-shadow에도 줄 수 있다.
+
+4) .text를 {display: flex;}로 정렬. 높이에 구애받지 않고 연장될 수 있음(텍스트 부분)
 
 
 [JS]
 
-1) 
+1) 기본 .text들을 JS함수로 생성함(생성과 동시에 각각 addEventListener를 통해 박스에만 정교하게 이벤트 적용)
+
+2) option value를 voices[i].name으로 설정해야 함.
+   배열 스캔시, for(i~) 구문보다 forEach 객체를 활용해야겠다.
+
+3) 새로운 스피치 메세지 생성: const msg = new SpeechSynthesisUtterance();
+   메세지 문구 저장 함수: function setTextMessage(text) { message.text = text; }
+   메세지 스피치 읽는 함수: function speakText() { SpeechSynthesis.speak(msg); }
+   보이스 변경 함수: function setVoice(e) { msg.voice = voices.find(voice => voice.name === e.target.value)}
+
+   Web Speech API 관련 기능들 각각을 개별 변수/함수로 지정
 
