@@ -27,6 +27,7 @@ header {
 
 button {
     cursor: pointer;
+    border: none;
 }
 
 #search {
@@ -63,7 +64,6 @@ button {
     position: absolute;
     color: #ffffff;
     background: #f847c3;
-    border: none;
     height: 43px;
 }
 
@@ -73,14 +73,50 @@ button {
 
 #container {
     display: flex;
-    justify-content: center;
-    width: 600px;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
     height: 100%;
     padding: 30px;
     margin: 0 auto;
-    border: 1px solid red;
 }
 
+.song {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+    margin: 5px;
+}
 
+.btn {
+    background: #ba25ff;
+    color: #fff;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 50vh;
+}
+
+#more-btn {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.prev-btn, .next-btn {
+    font-size: 18px;
+    display: none;
+}
+
+.lyrics-box {
+    width: 100%;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.lyrics-box h2 {
+    font-weight: normal;
+}
 
 
