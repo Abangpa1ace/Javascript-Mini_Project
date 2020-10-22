@@ -1,9 +1,29 @@
 [HTML&CSS] 
 
-1)
+1) button:active {transform: scale(0.95)} 의 방법도 있다.
+
+2) 음영을 filter가 아닌, header::after {background-color: rgba(0,0,0,0.4);} 로 넣음.
+
+3) prev, next 버튼은 크기를 주는것보다, scale(1.3)을 부여함.
 
 
 [JS]
 
-1) 
+1)  result.innerHTML = `
+        <ul class="songs">
+        ${data.data
+            .map(
+            song => `<li>
+        <span><strong>${song.artist.name}</strong> - ${song.title}</span>
+        <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button>
+        </li>`
+            )
+            .join('')}
+        </ul>`;
+    
+    - 이처럼, innerHTML 안에서 .map을 돌려서 각각 <li>를 그리는 방법도 있다.
+
+2) get lyrics 버튼 innerHTML 시, <button data-artist="${artist}"> 속성을 부여했다.
+   이를, const artist = e.target.getAttribute('data-artist) 로 가져와서,
+   searchLyrics(artist) 함수에 반영할 수 있다.  
 
