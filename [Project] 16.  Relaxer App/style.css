@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+    outline: 0;
+}
+
+body {
+    background: url(./starfall.jpg);
+    height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 7px solid;
+    border-color: #6ceeff;
+    border-bottom-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    border-radius: 50%;
+}
+
+.circle-text{
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.circle.in {
+    animation: grow 4s ease-out;
+}
+@keyframes grow {
+    from {
+        width: 300px;
+        height: 300px;
+    }
+    to {
+        width: 390px;
+        height: 390px;
+    }
+}
+
+.circle.hold {
+    width: 390px;
+    height: 390px;
+}
+
+.circle.out {
+    animation: shrink 4s ease-in;
+}
+@keyframes shrink {
+    from {
+        width: 390px;
+        height: 390px;
+    }
+    to {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.pointer {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    z-index: 10;
+}
