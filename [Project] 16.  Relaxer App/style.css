@@ -3,85 +3,111 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     outline: 0;
 }
 
 body {
-    background: url(./starfall.jpg);
+    background: #224941 url(./starfall.jpg) no-repeat center center/cover;
     height: 100vh;
     padding: 20px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
 }
 
-h1 {
-    color: #ffffff;
-    text-align: center;
-}
 
 #container {
     display: flex;
-    height: 90%;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform: scale(1);
 }
 
 .circle {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border: 7px solid;
-    border-color: #6ceeff;
-    border-bottom-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #000000;
+    background-color: #010f1c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
+    z-index: -1;
 }
 
-.circle-text{
-    color: #ffffff;
-    font-size: 24px;
+.gradient-circle {
+    background: conic-gradient(
+        #55b7a4 0%,
+        #4ca493 40%,
+        #ffffff 40%,
+        #ffffff 60%,
+        #336d62 60%,
+        #2a5b52 100%
+    );
+    height: 320px;
+    width: 320px;
+    z-index: -2;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
 }
 
-.circle.in {
-    animation: grow 4s ease-out;
-}
-@keyframes grow {
-    from {
-        width: 300px;
-        height: 300px;
-    }
-    to {
-        width: 390px;
-        height: 390px;
-    }
-}
-
-.circle.hold {
-    width: 390px;
-    height: 390px;
-}
-
-.circle.out {
-    animation: shrink 4s ease-in;
-}
-@keyframes shrink {
-    from {
-        width: 390px;
-        height: 390px;
-    }
-    to {
-        width: 300px;
-        height: 300px;
-    }
+.pointer-container {
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    width: 20px;
+    height: 190px;
+    animation: rotate 7.5s linear forwards infinite;
+    transform-origin: bottom center;
 }
 
 .pointer {
-    position: absolute;
+    background-color: #fff;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #ffffff;
-    z-index: 10;
+    display: block;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.container.grow {
+    animation: grow 3s linear forwards;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.container.shrink {
+    animation: shrink 3s linear forwards;
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
 }
