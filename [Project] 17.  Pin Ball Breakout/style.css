@@ -1,4 +1,4 @@
-* {
+v* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -37,10 +37,23 @@ h1 {
     margin-bottom: 30px;
 }
 
-#pin-ball {
+#container {
     position: relative;
     width: 800px;
     height: 600px;
+}
+
+.score-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #19a3ff;
+
+}
+
+canvas {
     border-radius: 5px;
     background: #f4f4f4;
 }
