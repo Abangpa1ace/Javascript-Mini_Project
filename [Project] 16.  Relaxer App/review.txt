@@ -1,9 +1,13 @@
 [HTML&CSS] 
 
-1)
+1) rotate와 grow/shrink 애니메이션 모두 CSS로 구현했다..
+   대신, grow, shrink를 container에 주니 .circle 반지름 계산 필요없이 내부요소 전체가 확대/축소됨..
+
+2) poineter를 pointer-container로 감싼뒤, container에 애니메이션 부여.
+   {transform-origin: bottom center;}를 줌으로써, 마치 시계바늘처럼 포인터를 돌림.
 
 
 [JS]
 
-1) 
+1) JS변수에 totalTime, breathTime, holdTime 등을 지정하여 유지보수가 용이해짐.
 
