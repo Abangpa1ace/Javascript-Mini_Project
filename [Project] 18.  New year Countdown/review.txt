@@ -1,0 +1,16 @@
+[HTML&CSS] 
+
+1) body(배경) 어두운 효과를 <div>를 구지 안만들어도, body::after로 만들면 된다. 
+   - body * {z-index: 1;}
+   * 이렇게 하니,.next-year을 그냥 z-index: -1을 주면 글자색을 따로 넣을 필요 없어진다.
+
+
+[JS]
+
+1) dday를 new Date(`January 01 ${nowYear+1} 00:00:00); 로 깔끔하게 설정
+
+2) gap을 전체적으로 계산: const diff = dday - today;
+  - const d = Math.floor(diff / 1000 / 60 / 60 / 24); 일수 차이
+  - const h = Math.floor(diff / 1000 / 60 / 60) % 24; 24로 나눈 나머지
+  - const m = Math.floor(diff / 1000 / 60) % 60;
+  - const s = Math.floor(diff / 1000) % 60;
