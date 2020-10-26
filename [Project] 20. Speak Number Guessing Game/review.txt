@@ -1,9 +1,14 @@
 [HTML&CSS] 
 
-1)
+1) randomNum을, Math.floor(Math.random()*100 + 1) -> random()이 0.00~0.99이므로
 
 
 [JS]
 
-1) 
+1) recognition을 let으로 선언.
+   recognition.addEventListener('result', 판정)
+   recognition.addEventListener('end', () => recognition.start();)
+
+2) 메세지를 표시하는 writeMEssage(msg) / 숫자 확인하는 checkNumber(msg) 두개 함수로 깔끔히 구분.
+   const num += msg; 한 뒤, num으로 체크하는 이유는 숫자 형태로 만들기 위함인 듯?
 
